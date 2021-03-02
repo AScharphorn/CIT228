@@ -1,0 +1,3 @@
+In python you can print lines of text using the print command
+In python you can write, read and append text files
+In python you can use user input to do functions that depend on the user input
