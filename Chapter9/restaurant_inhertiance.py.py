@@ -33,6 +33,7 @@ iceCreamStand = IceCreamStand("Dairy Queen","Ice Cream","4","Vanilla")
 
 restaurant.open_restaurant()
 restaurant.describe_restaurant()
+iceCreamStand.display_flavors()
 print()
 print(f"The initial number of customers today was {restaurant.number_served}")
 while day_end != "y":
@@ -43,6 +44,3 @@ while day_end != "y":
     restaurant.increment_number_served()
     print()
     day_end=input("Has the day ended? (y for yes) ")
-
-print()
-iceCreamStand.display_flavors()

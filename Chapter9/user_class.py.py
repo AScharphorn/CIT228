@@ -35,13 +35,12 @@ while user1.login_attempts<5 and attempt!=user1.password:
     if attempt==user1.password:
         user1.greet_user()
         user1.describer_user()
+        print()
+        user2.greet_user()
+        user2.describer_user()
+        print()
+        user3.greet_user()
+        user3.describer_user()
 if user1.login_attempts==5:
     print(f"Sorry {user1.first_name} but you have failed to login after {user1.login_attempts} attempts and your account has been locked for 30 minutes.")
     user1.reset_login_attempts()
-
-print()
-user2.greet_user()
-user2.describer_user()
-print()
-user3.greet_user()
-user3.describer_user()

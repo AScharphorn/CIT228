@@ -25,18 +25,20 @@ class User:
 
 class Admin:
     def __init__(self, first_name, last_name, username, password, email, login_attempts, permissions):
-        super().__init__(first_name, last_name, username, password, email, login_attempts)
+        self.first_name = first_name
+        self.last_name = last_name
+        self.username = username
+        self.password = password
+        self.email = email
+        self.login_attempts = 0
         self.privileges = Privileges(permissions)
-    
-    def show_admin_privilages(self):
-        self.privileges.show_privileges()
 
 class Privileges:
     def __init__(self, privileges):
         self.privileges = []
 
     def show_privileges(self):
-        print(f"Privileges: {self.privileges}")
+        print(f"Privileges: {admin.privileges}")
 
 user1 = User("Steven","Price","stevenprice","password1","steven@price.net",0)
 user2 = User("Cynthia","Rogers","cynthiarogers","zypher","cynthia@rogers.net",0)
@@ -61,8 +63,7 @@ if user1.login_attempts==5:
     print(f"Sorry {user1.first_name} but you have failed to login after {user1.login_attempts} attempts and your account has been locked for 30 minutes.")
     user1.reset_login_attempts()
 
-number=input("How many privilages are you entering?")
-number=int(number)
+number=int(input("How many privilages are you entering?"))
 counter=0
 privilege_list=[]
 while counter<number:
@@ -72,4 +73,4 @@ while counter<number:
 admin.privileges=privilege_list
 
 print()
-admin.show_admin_privilages()
+admin.privileges.show_privileges()
